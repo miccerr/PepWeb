@@ -171,19 +171,18 @@ img:active {
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0);
 }
 
-/* Chase starts FAR behind Target (to the right) */
+
 .chase {
     z-index: 1;
     transform: translateX(300px);
 }
 
-/* Target never moves */
+
 .target {
     z-index: 2;
     transform: translateX(0);
 }
 
-/* Chase slides left but stays behind Target */
 .social-btn:hover .chase {
     transform: translateX(100px) scale(1.1);
 }
