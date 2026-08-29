@@ -1,0 +1,198 @@
+body {
+  background: linear-gradient(135deg, #8000ff, #000000, #ff0000);
+  background-size: 400% 400%;
+  animation: bgMove 10s ease infinite;
+
+  color: #660c0c;
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  margin: 40px;
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+h1 {
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  text-align: center;
+
+  color: transparent;
+  background: linear-gradient(90deg, #ff0000, #ff4d4d, #8b0000, #ff0000);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.25);
+
+  animation: h1GlowMove 6s ease infinite;
+
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: default;
+}
+
+h1:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.5));
+}
+
+@keyframes h1GlowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h2 {
+  font-size: 1.9rem;
+  text-align: center;
+  width: 100%;
+
+  color: transparent;
+  background: linear-gradient(90deg, #ff3b3b, #ff0000, #7a0000);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(255, 0, 0, 0.2);
+
+  transition: transform 0.35s ease, filter 0.35s ease, background-position 0.8s ease;
+}
+
+h2:hover {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 0 12px rgba(255, 0, 0, 0.4));
+  background-position: 100% 0%;
+}
+.center {
+    text-align: center;
+}
+
+.center img {
+    display: block;
+    margin: 20px auto;
+}
+
+.center a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.line {
+    border: 1px solid #ff0000;
+    margin: 20px 0;
+}
+
+::selection {
+  background: #ff0000;
+  color: #000000;
+}
+
+p {
+  font-size: 1.6rem;
+  color: transparent;
+  background: linear-gradient(90deg, #ff0000, #ff4d4d, #8b0000);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.15);
+
+  transition: transform 0.35s ease, filter 0.35s ease, background-position 0.8s ease;
+  cursor: default;
+}
+
+p:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.35));
+  background-position: 100% 0%;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin-top: 40px;
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 1s ease, opacity 1s ease;
+}
+img:hover {
+  transform: scale(1.05);
+  opacity: 0.6;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 1s ease, opacity 1s ease, box-shadow 1s ease;
+}
+img:active {
+  transform: scale(0.95);
+  opacity: 0.8;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 1s ease, opacity 1s ease, box-shadow 1s ease;
+
+}
+
+.social-btn {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    margin-top: 25px;
+    overflow: visible;
+}
+
+.social-btn img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    transition: transform .8s cubic-bezier(.22,1,.36,1);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0);
+}
+
+/* Chase starts FAR behind Target (to the right) */
+.chase {
+    z-index: 1;
+    transform: translateX(300px);
+}
+
+/* Target never moves */
+.target {
+    z-index: 2;
+    transform: translateX(0);
+}
+
+/* Chase slides left but stays behind Target */
+.social-btn:hover .chase {
+    transform: translateX(100px) scale(1.1);
+}
+
+.social-btn:hover .target {
+    transform: translateX(0) scale(1.1);
+    
+}
+
+.social-btn:active {
+    transform: scale(.97);
+}
